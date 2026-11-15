@@ -1,0 +1,102 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+/* Centrar el botón */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Diseño del botón */
+.btn {
+    width: 400px;
+    height: 200px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        90deg,
+        #ed2996,
+        #95359f,
+        #ed2996
+    );
+    background-size: 300%;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Animación del degradado */
+.btn:hover {
+    animation: gradientMove 2s linear infinite;
+}
+
+.btn:active{
+animation: rebote 0.3s ease;
+}
+
+@keyframes rebote {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(0.85);
+    }
+
+    70% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+/* Contenedor del Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Diseño del Tooltip */
+.tooltip-text {
+    visibility: hidden;
+    width: 180px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+    border-radius:8px;
+
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Mostrar Tooltip */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}  

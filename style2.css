@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 60px 15px;
+
+    /* Imagen de fondo */
+    background-image: url("depositphotos_16245625-stock-illustration-vintage.jpg");
+
+    /* Ocupa toda la pantalla */
+    background-size: cover;
+
+    /* Centra la imagen */
+    background-position: center;
+
+    /* Evita que se repita */
+    background-repeat: no-repeat;
+
+    /* Mantiene el fondo fijo al desplazarse */
+    background-attachment: fixed;
+}
+
+/* PERGAMINO */
+.pergamino {
+    width: 800px;
+    max-width: 100%;
+    height: fit-content;
+    position: relative;
+
+    background:
+        /* Manchas antiguas */
+        radial-gradient(ellipse at 15% 20%,
+            #9f7644 0%, transparent 35%),
+
+        radial-gradient(ellipse at 85% 75%,
+            #a68148 0%, transparent 30%),
+
+        radial-gradient(ellipse at 50% 50%,
+            #9f8c57 0%, #ead19b 45%,
+            #d4ae70 80%, #9b6938 100%),
+
+        #d6b374;
+
+    padding: 80px 65px;
+
+    box-shadow:
+        0 15px 35px #000b,
+        inset 0 0 35px #75491e,
+        inset 0 0 90px #a77b43;
+    
+    border-radius: 8px;
+
+    overflow: visible;
+}
+
+/* BORDES OSCUROS */
+.pergamino::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            #75451f99,
+            transparent 9%,
+            transparent 91%,
+            #75451f99
+        ),
+        linear-gradient(
+            180deg,
+            #80502699,
+            transparent 12%,
+            transparent 88%,
+            #80502699
+        );
+
+    border-radius: inherit;
+}
+
+/* EXTREMOS ENROLLADOS */
+.borde-superior,
+.borde-inferior {
+    position: absolute;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: 38px;
+
+    background: linear-gradient(
+        180deg,
+        #825327,
+        #c5a46f 20%,
+        #d6b571 45%,
+        #b98a4e 75%,
+        #70431f
+    );
+
+    border-radius: 50%;
+    box-shadow:
+        0 5px 9px #0008,
+        inset 0 4px 7px #fff5,
+        inset 0 -5px 8px #593515;
+}
+
+.borde-superior {
+    top: -17px;
+}
+
+.borde-inferior {
+    bottom: -17px;
+}
+
+/* CONTENIDO */
+.contenido {
+    position: relative;
+    z-index: 1;
+
+    color: #493019;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+
+    text-shadow: 0 1px 1px #fff3;
+}
+
+.contenido h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: #68431e;
+    text-shadow: 1px 2px 2px #a77a43;
+}
+
+.contenido p {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    font-family: Georgia, 'Times New Roman', Times, serifse;
+    font-size: 23px;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .pergamino {
+        padding: 65px 30px;
+    }
+
+    .contenido {
+        font-size: 16px;
+    }
+}
